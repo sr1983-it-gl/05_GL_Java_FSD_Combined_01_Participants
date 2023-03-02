@@ -1,0 +1,36 @@
+drop table IF EXISTS PERSON_NULL_RECORDS;
+
+CREATE TABLE PERSON_NULL_RECORDS
+(
+    ID 	SMALLINT,
+    NAME 	VARCHAR(25),
+    AGE 	SMALLINT,
+    ADDRESS 	VARCHAR(100),
+    NO_OF_CARS 	SMALLINT
+);	
+
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (1, 'Rajesh', 35, 'Indra Nagar, Bangalore', 2);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (2, 'Sweta', 28, 'Airport Road, Bangalore', NULL);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (3, 'Mark', 42, NULL, NULL);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (4, 'Chris', NULL, NULL, NULL);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (5, NULL, NULL, NULL, NULL);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (6, 'Adam', NULL, NULL, 5);
+INSERT INTO PERSON_NULL_RECORDS (ID, NAME, AGE, ADDRESS, NO_OF_CARS) VALUES (7, 'Johana', 33, NULL, NULL);
+
+
+-- Usage - Concatenation
+-- Step 1
+-- Returns NULL when any of the column has NULL values
+SELECT CONCAT(ID, ' ', NAME, ' ', AGE, ' ', ADDRESS, ' ', NO_OF_CARS) AS PERSON_DISPLAY FROM PERSON_NULL_RECORDS;
+
+
+-- Step 2
+-- NULL values avoided using COALESCE
+SELECT CONCAT(ID, ' ', COALESCE(NAME, ''), ' ', COALESCE(AGE, ''), ' ', COALESCE(ADDRESS, ' '), ' ', COALESCE(NO_OF_CARS, ' ')) AS PERSON_DISPLAY FROM PERSON_NULL_RECORDS;
+
+
+-- Usage - Multiple params in COALESCE
+
+select id, name, age, address, no_of_cars from person_null_records;
+
+select coalesce(no_of_cars, address,  age, name, id) from person_null_records;
