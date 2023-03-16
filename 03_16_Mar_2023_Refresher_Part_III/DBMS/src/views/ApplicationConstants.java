@@ -6,7 +6,7 @@ public class ApplicationConstants {
 		= "com.mysql.cj.jdbc.Driver";
 	
 	public static String CONNECTION_URL
-		=	"jdbc:mysql://localhost:3306/dbms_refresher_participants_02_mar_2023";
+		=	"jdbc:mysql://localhost:3306/dbms_refresher_participants_03";
 
 	public static String USERNAME = "root";
 	
