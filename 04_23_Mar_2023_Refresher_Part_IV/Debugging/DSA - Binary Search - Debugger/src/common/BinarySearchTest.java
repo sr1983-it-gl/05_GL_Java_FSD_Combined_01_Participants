@@ -1,6 +1,6 @@
-package v_correct;
+package common;
 
-import common.DataStructureUtils;
+import v_correct.BinarySearch;
 import v_incorrect.BinarySearchIncorrect1;
 import v_incorrect.BinarySearchIncorrect2;
 
@@ -22,11 +22,11 @@ public class BinarySearchTest {
 
 		BinarySearch search = new BinarySearch(array);
 		
-		int searchElement = 38;
+		int searchElement = 100;
 		int searchElementIndex = search.search(searchElement);
 		
 		System.out.println(String.format(
-			"Element %d is at present index %d", searchElement, searchElementIndex));				
+			"Element %d is present at index %d", searchElement, searchElementIndex));				
 	}
 
 
@@ -38,7 +38,7 @@ public class BinarySearchTest {
 
 		BinarySearchIncorrect1 search = new BinarySearchIncorrect1(array);
 		
-		int searchElement = 27;
+		int searchElement = 38;
 		int searchElementIndex = search.search(searchElement);
 		
 		System.out.println(String.format(
@@ -53,7 +53,9 @@ public class BinarySearchTest {
 
 		BinarySearchIncorrect2 search = new BinarySearchIncorrect2(array);
 		
-		int searchElement = 35;
+		// 24 -> Results are incorrect
+		// 18, 27, 38, 46, 35, 56, 9, 24 -> Results are correct
+		int searchElement = 56;
 		int searchElementIndex = search.search(searchElement);
 		
 		System.out.println(String.format(

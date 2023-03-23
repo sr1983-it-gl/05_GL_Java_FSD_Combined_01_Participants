@@ -23,7 +23,7 @@ public class BinarySearchIncorrect2 {
 		int startIndex = 0;
 		int endIndex = array.length - 1;
 		
-		while (startIndex < endIndex) {
+		while (startIndex <= endIndex) {
 
 			int middleElementIndex = (startIndex + endIndex) / 2;
 			int middleElementValue = array[middleElementIndex];
@@ -32,14 +32,15 @@ public class BinarySearchIncorrect2 {
 				return middleElementIndex;
 			}else {
 				
-				if (searchValue > middleElementValue) {
-					
-					// Present on the right side
-					startIndex = middleElementIndex + 1;
-				}else if (searchValue < middleElementValue) {
-					
+				if (searchValue < middleElementValue) {
+
 					// Present on the left side
 					endIndex = middleElementIndex - 1;
+
+				}else if (searchValue > middleElementValue) {
+
+					// Present on the right side
+					startIndex = middleElementIndex + 1;					
 				}
 			}
 			
