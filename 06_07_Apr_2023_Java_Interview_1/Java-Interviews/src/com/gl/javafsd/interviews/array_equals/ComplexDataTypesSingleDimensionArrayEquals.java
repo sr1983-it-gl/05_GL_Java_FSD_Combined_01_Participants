@@ -1,6 +1,6 @@
 package com.gl.javafsd.interviews.array_equals;
 
-public class ComplexDataTypesArrayEquals {
+public class ComplexDataTypesSingleDimensionArrayEquals {
 
 	public static void main(String[] args) {
 		
